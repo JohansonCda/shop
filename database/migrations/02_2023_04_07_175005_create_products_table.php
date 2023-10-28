@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    protected $order = 2;
+
     /**
      * Run the migrations.
      *
@@ -13,7 +15,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('product', function (Blueprint $table) {
+        Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->text('description')->nullable();

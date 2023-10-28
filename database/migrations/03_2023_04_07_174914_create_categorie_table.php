@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    protected $order = 3;
+
     /**
      * Run the migrations.
      *
@@ -13,14 +15,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('user', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->string('adress');
-            $table->string('phone');
-            $table->rememberToken();
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }
@@ -32,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user');
+        Schema::dropIfExists('categorie');
     }
 };

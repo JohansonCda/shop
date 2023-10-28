@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ProductController;
+use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +16,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $products = Product::all();
+    return view('index', [
+        "products"=>$products
+    ]);
 });
+
+Route::get('/login', function () {
+    return view('login');
+});
+

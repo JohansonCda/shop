@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    protected $order = 4;
+
     /**
      * Run the migrations.
      *
@@ -13,9 +15,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('categorie', function (Blueprint $table) {
+        Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->decimal('total', 10, 2);
+            $table->string('status');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
@@ -26,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categorie');
+        Schema::dropIfExists('order');
     }
 };

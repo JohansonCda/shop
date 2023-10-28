@@ -1,0 +1,78 @@
+/* Estilos globales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #1d2221;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para el encabezado */
+.header {
+    background-color: #07bd47;
+    padding: 20px;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* Estilos para el contenedor principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilos para el contenido de la tienda */
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+.product-item {
+    background-color: #f0f0f0;
+    border: 1px solid #1d2221;
+    padding: 20px;
+}
+
+.product-item img {
+    max-width: 100%;
+}
+
+.product-item h3 {
+    margin-top: 0;
+}
+
+/* Estilos para el pie de página */
+.footer {
+    background-color: #1d2221;
+    padding: 20px;
+    color: #f9f0db;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.slider-container {
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider {
+    width: 300%; /* Ancho total de los slides (300% porque hay 3 slides por ahora) */
+    display: flex;
+}
+
+.slide {
+    width: 33.33%; /* Ancho de cada slide (33.33% porque hay 3 slides por ahora) */
+    transition: 0.5s; /* Transición suave entre slides */
+}
+
+img {
+    width: 500px;
+    height: 500px;
+}
